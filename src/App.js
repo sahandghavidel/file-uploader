@@ -78,7 +78,7 @@ function App() {
         </div>
         {showPicker && (
           <PickerOverlay
-            apikey={"AdeSj6DHlTbeajSDuhyDGz"}
+            apikey={process.env.REACT_APP_FILESTACK_API_KEY}
             onUploadDone={(res) => {
               console.log(res);
               handleUploadDone(res);
