@@ -14,8 +14,8 @@ body {
   color: #333;
 }
 
-/* Header styles */
-.App-header {
+/* App styles */
+.App {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -42,50 +42,48 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 className="App-logo-text">File Uploader</h1>
-        <p>Upload your files here</p>
-        <button className="upload-button" onClick={handleClick}>
-          Upload
-        </button>
-        <div className="upload-history">
-          <h3>Upload history:</h3>
-          {uploadHistory.length === 0 && <p>No files have been uploaded yet</p>}
-          <ul>
-            {uploadHistory.map((upload) => (
-              <li key={upload.handle}>
-                <span>{upload.fileName}</span>
-                <span>{upload.timestamp}</span>
-                <button
-                  className="upload-history-button"
-                  onClick={() =>
-                    window.open(
-                      `https://cdn.filestackcontent.com/${upload.handle}`
-                    )
-                  }
-                >
-                  View
-                </button>
-                <button
-                  className="delete-history-button"
-                  onClick={() => handleDelete(upload.handle)}
-                >
-                  Delete
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-        {showPicker && (
-          <PickerOverlay
-            apikey={process.env.REACT_APP_FILESTACK_API_KEY}
-            onUploadDone={(res) => {
-              console.log(res);
-              handleUploadDone(res);
-            }}
-          />
-        )}
-      </header>
+      <h1 className="App-logo-text">File Uploader</h1>
+      <p>Upload your files here</p>
+      <button className="upload-button" onClick={handleClick}>
+        Upload
+      </button>
+      <div className="upload-history">
+        <h3>Upload history:</h3>
+        {uploadHistory.length === 0 && <p>No files have been uploaded yet</p>}
+        <ul>
+          {uploadHistory.map((upload) => (
+            <li key={upload.handle}>
+              <span>{upload.fileName}</span>
+              <span>{upload.timestamp}</span>
+              <button
+                className="upload-history-button"
+                onClick={() =>
+                  window.open(
+                    `https://cdn.filestackcontent.com/${upload.handle}`
+                  )
+                }
+              >
+                View
+              </button>
+              <button
+                className="delete-history-button"
+                onClick={() => handleDelete(upload.handle)}
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {showPicker && (
+        <PickerOverlay
+          apikey={process.env.REACT_APP_FILESTACK_API_KEY}
+          onUploadDone={(res) => {
+            console.log(res);
+            handleUploadDone(res);
+          }}
+        />
+      )}
     </div>
   );
 }
