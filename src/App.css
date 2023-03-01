@@ -1,38 +1,161 @@
-.App {
-  text-align: center;
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Global styles */
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+/* Header styles */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.App-logo-text {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #444;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.upload-button {
+  display: inline-block;
+  background-color: #008cba;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: #006a8c;
+}
+
+/* Upload history styles */
+.upload-history {
+  width: 100%;
+  max-width: 700px;
+  margin-top: 2rem;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.upload-history h3 {
+  padding: 1rem;
+  font-size: 1.25rem;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+.upload-history p {
+  padding: 0.9rem;
+  color: #666;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li span:first-child {
+  flex: 1;
+  margin-right: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+li span:last-child {
+  flex-shrink: 0;
+  color: #888;
+}
+
+.upload-history-button {
+  background-color: #f2f2f2;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #008cba;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-left: 10px;
+}
+
+.upload-history-button:hover {
+  color: #006a8c;
+}
+
+.delete-history-button {
+  background: rgb(201, 57, 57);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #f2f2f2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.delete-history-button:hover {
+  background: rgb(221, 57, 57);
+}
+
+/* Filestack picker styles */
+.fs-picker-modal {
+  z-index: 9999999;
+}
+
+.fs-uploader {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.fs-btn {
+  background-color: #008cba;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fs-btn:hover {
+  background-color: #006a8c;
 }
